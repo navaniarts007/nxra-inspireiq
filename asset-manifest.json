@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/nxra-inspireiq/static/js/main.8df9abab.js",
+    "main.js": "/nxra-inspireiq/static/js/main.bbacd472.js",
     "index.html": "/nxra-inspireiq/index.html",
-    "main.8df9abab.js.map": "/nxra-inspireiq/static/js/main.8df9abab.js.map"
+    "main.bbacd472.js.map": "/nxra-inspireiq/static/js/main.bbacd472.js.map"
   },
   "entrypoints": [
-    "static/js/main.8df9abab.js"
+    "static/js/main.bbacd472.js"
   ]
 }
