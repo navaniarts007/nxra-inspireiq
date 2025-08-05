@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from './AuthContext';
 import { useTheme } from './ThemeContext';
 
@@ -19,9 +20,9 @@ export default function Navigation() {
     }
   };
 
-  const NavLink = ({ href, children, icon, badge }) => (
-    <a
-      href={href}
+  const NavLink = ({ to, children, icon, badge }) => (
+    <Link
+      to={to}
       className="group flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-white/80 dark:hover:bg-slate-800/80 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white relative"
     >
       {icon && <span className="text-lg">{icon}</span>}
@@ -32,7 +33,7 @@ export default function Navigation() {
         </span>
       )}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-purple-600/0 group-hover:from-blue-500/5 group-hover:to-purple-600/5 rounded-xl transition-all duration-200"></div>
-    </a>
+    </Link>
   );
 
   const ThemeToggle = () => (
@@ -59,7 +60,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <a href="/" className="group flex items-center space-x-3">
+            <Link to="/" className="group flex items-center space-x-3">
               <div className="relative">
                 <img 
                   src="/logo.jpg" 
@@ -83,16 +84,16 @@ export default function Navigation() {
                 </h1>
                 <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Technology that Thinks Ahead</p>
               </div>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-2">
             {currentUser && (
               <>
-                <NavLink href="/" icon="✨">New Analysis</NavLink>
-                <NavLink href="/history" icon="📚">History</NavLink>
-                <NavLink href="/dashboard" icon="📊" badge="New">Dashboard</NavLink>
+                <NavLink to="/" icon="✨">New Analysis</NavLink>
+                <NavLink to="/history" icon="📚">History</NavLink>
+                <NavLink to="/dashboard" icon="📊" badge="New">Dashboard</NavLink>
               </>
             )}
           </div>
@@ -167,9 +168,9 @@ export default function Navigation() {
         {isMobileMenuOpen && currentUser && (
           <div className="lg:hidden py-4 border-t border-slate-200 dark:border-slate-700">
             <div className="space-y-2">
-              <NavLink href="/" icon="✨">New Analysis</NavLink>
-              <NavLink href="/history" icon="📚">History</NavLink>
-              <NavLink href="/dashboard" icon="📊" badge="New">Dashboard</NavLink>
+              <NavLink to="/" icon="✨">New Analysis</NavLink>
+              <NavLink to="/history" icon="📚">History</NavLink>
+              <NavLink to="/dashboard" icon="📊" badge="New">Dashboard</NavLink>
             </div>
           </div>
         )}
