@@ -2,7 +2,7 @@
   "name": "nxra-inspireiq",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://YOUR_GITHUB_USERNAME.github.io/nxra-inspireiq",
+  "homepage": "https://your-github-username.github.io/nxra-inspireiq",
   "dependencies": {
     "firebase": "^12.0.0",
     "react": "^17.0.2",
