@@ -79,9 +79,9 @@ export default function IdeaValidator() {
 
   // Main function to handle validation
   const handleValidate = async () => {
-    // Basic validation
-    if (!name || !email || !idea) {
-      setError('Please fill in your name, email, and product idea.');
+    // Basic validation - ALL fields are now required
+    if (!name || !email || !phone || !idea) {
+      setError('Please fill in all required fields: name, email, phone number, and product idea.');
       return;
     }
     if (GOOGLE_APPS_SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
@@ -567,7 +567,9 @@ export default function IdeaValidator() {
         <div className="glass rounded-3xl p-8 border border-slate-200/50 dark:border-slate-700/50 animate-slide-up">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
             <div className="space-y-2">
-              <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300">Full Name</label>
+              <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300">
+                Full Name <span className="text-red-500">*</span>
+              </label>
               <input
                 type="text"
                 placeholder="Enter your full name"
@@ -575,35 +577,44 @@ export default function IdeaValidator() {
                 onChange={(e) => setName(e.target.value)}
                 className="w-full px-4 py-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-all duration-200 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400"
                 disabled={currentUser && currentUser.displayName}
+                required
               />
             </div>
             
             <div className="space-y-2">
-              <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300">Email Address</label>
+              <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300">
+                Email Address <span className="text-red-500">*</span>
+              </label>
               <input
                 type="email"
-                placeholder="your.email@example.com"
+                placeholder="nxrainsights@gmail.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-4 py-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-all duration-200 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400"
                 disabled={currentUser && currentUser.email}
+                required
               />
             </div>
             
             <div className="space-y-2">
-              <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300">Phone Number</label>
+              <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300">
+                Phone Number <span className="text-red-500">*</span>
+              </label>
               <input
                 type="tel"
                 placeholder="+91 9442608026"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 className="w-full px-4 py-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-all duration-200 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400"
+                required
               />
             </div>
           </div>
           
           <div className="space-y-2 mb-6">
-            <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300">Product Idea Description</label>
+            <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300">
+              Product Idea Description <span className="text-red-500">*</span>
+            </label>
             <div className="relative">
               <textarea
                 className="w-full px-4 py-4 pr-14 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-all duration-200 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 resize-none"
@@ -611,14 +622,15 @@ export default function IdeaValidator() {
                 placeholder="Describe your product idea in detail... What problem does it solve? Who is your target audience? What makes it unique?"
                 value={idea}
                 onChange={(e) => setIdea(e.target.value)}
+                required
               ></textarea>
               
               {/* Up Arrow Submit Button */}
               <button
                 onClick={handleValidate}
-                disabled={loading || !name || !email || !idea}
+                disabled={loading || !name || !email || !phone || !idea}
                 className={`absolute bottom-3 right-3 p-2 rounded-full transition-all duration-200 hover:scale-110 focus:ring-2 focus:ring-blue-500/25 ${
-                  loading || !name || !email || !idea
+                  loading || !name || !email || !phone || !idea
                     ? 'bg-slate-300 dark:bg-slate-600 cursor-not-allowed'
                     : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:shadow-lg cursor-pointer'
                 }`}
