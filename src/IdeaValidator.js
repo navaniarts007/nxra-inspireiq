@@ -475,19 +475,21 @@ export default function IdeaValidator() {
           {/* Logo */}
           <div className="flex justify-center mb-8">
             <img 
-              src={`${process.env.PUBLIC_URL}/nxra-logo.svg`} 
+              src={`${process.env.PUBLIC_URL}/logo.jpg`} 
               alt="NXRA insights Pvt. Ltd. Logo" 
               className="h-24 w-auto object-contain dark:hidden"
               onError={(e) => {
+                console.log('Logo failed to load:', e.target.src);
                 e.target.style.display = 'none';
                 e.target.nextSibling.style.display = 'block';
               }}
             />
             <img 
-              src={`${process.env.PUBLIC_URL}/nxra-logo.svg`} 
+              src={`${process.env.PUBLIC_URL}/logo.jpg`} 
               alt="NXRA insights Pvt. Ltd" 
               className="h-24 w-auto object-contain hidden dark:block"
               onError={(e) => {
+                console.log('Logo failed to load:', e.target.src);
                 e.target.style.display = 'none';
                 e.target.nextSibling.style.display = 'block';
               }}
@@ -503,10 +505,11 @@ export default function IdeaValidator() {
           
           <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500/10 to-purple-600/10 border border-blue-500/20 dark:border-blue-400/20 rounded-full px-4 py-2 mb-6">
             <img 
-              src={`${process.env.PUBLIC_URL}/nxra-logo.svg`} 
+              src={`${process.env.PUBLIC_URL}/logo.jpg`} 
               alt="NXRA insights Pvt. Ltd." 
               className="w-5 h-5 object-contain text-blue-600 dark:text-blue-400"
               onError={(e) => {
+                console.log('Small logo failed to load:', e.target.src);
                 e.target.style.display = 'none';
                 e.target.nextSibling.style.display = 'block';
               }}

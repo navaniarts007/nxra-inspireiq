@@ -63,10 +63,11 @@ export default function Navigation() {
             <Link to="/" className="group flex items-center space-x-3">
               <div className="relative">
                 <img 
-                  src={`${process.env.PUBLIC_URL}/nxra-logo.svg`} 
+                  src={`${process.env.PUBLIC_URL}/logo.jpg`} 
                   alt="NXRA insights Pvt. Ltd. Logo" 
                   className="w-10 h-10 object-contain group-hover:scale-105 transition-all duration-300 text-slate-900 dark:text-white"
                   onError={(e) => {
+                    console.log('Logo failed to load:', e.target.src);
                     e.target.style.display = 'none';
                     e.target.nextSibling.style.display = 'flex';
                   }}
