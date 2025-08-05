@@ -32,11 +32,7 @@ export function AuthProvider({ children }) {
       setAuthError(error.message);
       
       // Show user-friendly error message
-      if (error.code === 'auth/unauthorized-domain') {
-        alert(`🔧 Firebase Setup Required!\n\nThe domain 'navaniarts007.github.io' needs to be added to Firebase authorized domains.\n\nPlease check FIREBASE_SETUP.md for instructions.`);
-      } else {
-        alert(`Authentication Error: ${error.message}\n\nPlease check the Firebase setup guide.`);
-      }
+      alert(`Authentication Error: ${error.message}\n\nPlease check the Firebase setup guide (FIREBASE_SETUP.md) to configure authorized domains.`);
       throw error;
     }
   };
@@ -57,7 +53,7 @@ export function AuthProvider({ children }) {
     
     const unsubscribe = onAuthStateChanged(auth, 
       (user) => {
-        console.log('� Auth state changed:', user ? `User: ${user.email}` : 'No user');
+        console.log('👤 Auth state changed:', user ? `User: ${user.email}` : 'No user');
         setCurrentUser(user);
         setLoading(false);
       },
