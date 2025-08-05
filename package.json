@@ -2,7 +2,7 @@
   "name": "nxra-inspireiq",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://navaniarts007.github.io/nxra-inspireiq",
+  "homepage": "https://nxrainspireiq.dev",
   "dependencies": {
     "firebase": "^12.0.0",
     "react": "^17.0.2",
