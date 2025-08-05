@@ -13,6 +13,8 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
+  console.log('🔐 AuthProvider initializing...');
+  
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
 

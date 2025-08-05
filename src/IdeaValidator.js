@@ -6,8 +6,13 @@ import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, ResponsiveContainer, 
 
 // IdeaValidator Component (previously the main App logic)
 export default function IdeaValidator() {
+  console.log('🎨 IdeaValidator component rendering...');
+  
   const { currentUser } = useAuth();
   const { isDark } = useTheme();
+  
+  console.log('👤 Current user:', currentUser ? 'Logged in' : 'Not logged in');
+  console.log('🌙 Dark mode:', isDark);
   
   // --- STATE VARIABLES ---
   const [name, setName] = React.useState(currentUser?.displayName || '');

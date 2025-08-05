@@ -9,6 +9,8 @@ import Dashboard from './Dashboard';
 
 // Main App Component
 export default function App() {
+  console.log('🎯 App component rendering...');
+  
   return (
     <ThemeProvider>
       <AuthProvider>
