@@ -38,7 +38,7 @@ echo 5. Save
 echo.
 
 echo 🎉 Your live URL will be:
-echo https://YOUR_USERNAME.github.io/nxra-inspireiq
+echo https://navaniarts007.github.io/nxra-inspireiq
 echo.
 
 pause
