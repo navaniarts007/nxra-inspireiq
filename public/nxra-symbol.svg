@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <!-- Infinity symbol - two interlocking circles -->
+  <g transform="translate(100, 40)">
+    <!-- Left circle -->
+    <path d="M -40 0 A 20 20 0 1 1 -40 0.1 Z M -40 -12.5 A 12.5 12.5 0 1 0 -40 12.5 A 12.5 12.5 0 1 0 -40 -12.5 Z" 
+          fill="currentColor" fill-rule="evenodd"/>
+    
+    <!-- Right circle -->
+    <path d="M 40 0 A 20 20 0 1 1 40 0.1 Z M 40 -12.5 A 12.5 12.5 0 1 0 40 12.5 A 12.5 12.5 0 1 0 40 -12.5 Z" 
+          fill="currentColor" fill-rule="evenodd"/>
+    
+    <!-- Connecting overlap area -->
+    <ellipse cx="0" cy="0" rx="12.5" ry="20" fill="currentColor" opacity="0.9"/>
+  </g>
+</svg>
