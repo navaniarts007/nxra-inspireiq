@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="url(#logoGradient)" filter="url(#glow)" opacity="0.1"/>
+  
+  <!-- Main icon - lightbulb with AI elements -->
+  <g transform="translate(100, 100)">
+    <!-- Lightbulb base -->
+    <path d="M-20,40 L-15,50 L15,50 L20,40 Z" fill="url(#logoGradient)" opacity="0.8"/>
+    <rect x="-12" y="50" width="24" height="8" fill="url(#logoGradient)" opacity="0.6" rx="2"/>
+    
+    <!-- Lightbulb main -->
+    <path d="M-25,5 C-25,-25 -10,-40 0,-40 C10,-40 25,-25 25,5 C25,15 20,25 15,35 L-15,35 C-20,25 -25,15 -25,5 Z" 
+          fill="url(#logoGradient)" opacity="0.9"/>
+    
+    <!-- AI Brain pattern inside -->
+    <circle cx="-8" cy="-15" r="3" fill="white" opacity="0.7"/>
+    <circle cx="8" cy="-15" r="3" fill="white" opacity="0.7"/>
+    <circle cx="0" cy="-5" r="2" fill="white" opacity="0.7"/>
+    <circle cx="-8" cy="5" r="2" fill="white" opacity="0.5"/>
+    <circle cx="8" cy="5" r="2" fill="white" opacity="0.5"/>
+    
+    <!-- Neural network lines -->
+    <path d="M-8,-15 L0,-5 L8,-15" stroke="white" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path d="M-8,5 L0,-5 L8,5" stroke="white" stroke-width="1.5" fill="none" opacity="0.6"/>
+    
+    <!-- Spark effects -->
+    <g transform="translate(30, -30)">
+      <path d="M0,-8 L2,0 L8,0 L3,3 L5,8 L0,5 L-5,8 L-3,3 L-8,0 L-2,0 Z" 
+            fill="url(#logoGradient)" opacity="0.8"/>
+    </g>
+    <g transform="translate(-35, -20) scale(0.7)">
+      <path d="M0,-8 L2,0 L8,0 L3,3 L5,8 L0,5 L-5,8 L-3,3 L-8,0 L-2,0 Z" 
+            fill="url(#logoGradient)" opacity="0.6"/>
+    </g>
+    <g transform="translate(32, 15) scale(0.5)">
+      <path d="M0,-8 L2,0 L8,0 L3,3 L5,8 L0,5 L-5,8 L-3,3 L-8,0 L-2,0 Z" 
+            fill="url(#logoGradient)" opacity="0.7"/>
+    </g>
+  </g>
+  
+  <!-- Company name -->
+  <text x="100" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="url(#logoGradient)">
+    PitchPerfect AI
+  </text>
+</svg>
